@@ -10,7 +10,20 @@ public class Task {
 	private String title;
 	private String description;
 	private boolean done;
-	
+
+	public  Task(){
+		this.id = null;
+		this.title = "";
+		this.description = "";
+		this.done = false;
+	}
+
+	public Task(String title, String description) {
+		this();
+		this.title = title;
+		this.description = description;
+	}
+
 	@DynamoDBHashKey(attributeName="id")
 	public String getId() {
 		return id;
